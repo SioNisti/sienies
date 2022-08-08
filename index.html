@@ -1,0 +1,121 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<html lang="en">
+<head>
+<script type="text/javascript">
+let urlParams = new URLSearchParams(window.location.search);
+let id = urlParams.get('id');
+
+  $(document).ready(function() {
+    if (!window.location.href.includes("?id=")) {
+		window.open('?id='+Math.floor(Math.random() * 340), '_self');
+    } else if (id > 339) {
+		window.open('?id='+Math.floor(Math.random() * 340), '_self');
+	} else if (id < 1) {
+		window.open('?id='+Math.floor(Math.random() * 340), '_self');
+	}
+  });
+
+function prev() {
+	id--;
+	if (id < 1) {
+		id = 339;
+	}
+	
+	window.open('?id='+id, '_self');
+}
+function nxt() {
+	id++;
+	
+	if (id > 339) {
+		id = 1;
+	}
+	
+	window.open("?id="+id, '_self');
+}
+
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("container");
+		player.style.width = "550px"; 
+		player.style.height = "450px";
+        container.appendChild(player);
+        player.load("swf/"+id+".swf");
+    });
+</script>
+<script src="ruffle/ruffle.js"></script>
+        <title>Sieni.es - Hengenvaara</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Sieni.es causes permanent damage to human brain activity.">
+        <link rel="icon" type="image/png" href="tatti.png">
+        <link rel="image_src" href="tatti.png">
+		<link href="style.css" type="text/css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,700' rel='stylesheet' type='text/css'>
+</head>
+
+<style>
+.form {
+	position: fixed;
+	top: 8px;
+	width: auto;
+	height auto;
+	margin-top: 40px;
+	margin-left: 20px;
+	padding: 10px;
+	border: 1px solid black;
+	background-color:#fff;
+	font-family: 'Ubuntu', sans-serif;
+	color: red;
+	box-shadow: 0px 0px 10px black;
+	border-radius: 3px;
+}
+</style>
+
+<body>
+
+<div id="info">
+        <a href="info.html">
+                <b style="color: #ba0101">Sieni.es - Info!</b>
+        </a>
+</div>
+
+<div class="form">
+	<b>varoitus:<br>tämän sivun sisältö lienee loukkaavaa heikkomielisille<br> ja epilepsia herkille<br><br><br>
+	huom:<br>joka flashi ei vielä toimi kunnolla.<br>pitää odotella rufflen päivityksiä<br><br><br>
+	kiitokset:<br>sieni.us ja sieni.es pyörittäjille<br>sekä tietenkin jonne.es pyörittäjälle jolta nussin kaikki swf:t</b>
+</div>
+
+<div id="logo">
+        <center><img src="logo.png"></center>
+</div>
+</div>
+ 
+</div>
+<div id="wrap">
+        <div id="content">
+                <b>Sieni.es causes <span style="color: #ba0101">permanent</span> damage to human brain activity.</b>
+               
+                <div id="buttons">
+				
+<div id="container" style="background-color:black; margin: auto; width: 550px; height: 450px;"></div>
+
+<br/><br/><a id="prev" onclick="prev()">Prev</a> <a id="random" onclick="window.open('?id='+Math.floor(Math.random() * 340), '_self');">Random</a>  <a id="next" onclick="nxt()">Next</a> 
+</div>
+<br><br>
+<div class="fb-like" data-href="http://sieni.es" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="false"></div>
+<br><br>
+ 
+ 
+<p>Last update: <b>1/06/2015.</b><p>
+<p>     <a href="https://www.waltsu.fi" target="_blank">
+                <img src="waltsu1.png" title="Waltsu.fi ❤ Sieni.es">
+        </a></p>
+        </div>
+</div>
+</div>
+
+</body>
+</html>
+
